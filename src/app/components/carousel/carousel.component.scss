@@ -22,18 +22,22 @@
       font-size: 0.8em;
     }
   }
+
+  .carousel-caption.right{
+    left: 60%;
+  }
 }
 
 @media screen and (max-width: 576px) {
   :host ::ng-deep .carousel .carousel-caption{
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 }
 
 @media screen and (max-width: 992px) {
-  :host ::ng-deep .carousel .carousel-caption{  
+  :host ::ng-deep .carousel .carousel-caption, .carousel-caption.right{  
     bottom: 10%;
-    left: 15%;
+    left: 15% !important;
     font-size: 28px;
   }
 }
