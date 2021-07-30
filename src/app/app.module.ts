@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
+import { AngularFireModule } from '@angular/fire';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +14,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component'
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+
+import { firebaseConfig } from './fireconfig'
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
