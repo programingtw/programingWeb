@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "programing-972f0": {
+      "hosting": {
+        "programingFrontend": [
+          "programing-972f0"
+        ]
+      }
+    }
+  }
+}
