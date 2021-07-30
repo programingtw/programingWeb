@@ -1,0 +1,27 @@
+:host ::ng-deep .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #009DC0;
+  // background-color: #F2DF39;
+  // background-color: #E95689;
+
+  a{
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.nav-logo{
+  width: 52px;
+  height: 52px;
+  margin-bottom: 6px;
+  cursor: pointer;
+
+  &+a{
+    font-size: 22px;
+    margin-top: 12px;
+  }
+}
