@@ -31,6 +31,28 @@
   }
 }
 
+.social{
+  text-align: center;
+
+  .d-flex{
+    width: 30%;
+  }
+
+  a{
+    font-weight: 300;
+    margin: 10px auto;
+    align-content: space-between;
+  }
+}
+
 .fa-facebook{
   color: #3B5998;
+}
+
+.fa-instagram{
+  color: #405de6;
+}
+
+.fa-line{
+  color: #00c300;
 }
