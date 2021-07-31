@@ -37,7 +37,12 @@
 
   .d-flex{
     width: 30%;
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
   }
+  
 
   a{
     margin: 10px auto;
