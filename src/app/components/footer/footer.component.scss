@@ -1,3 +1,11 @@
 .row{
   padding: 40px 20px;
 }
+
+.footer-header{
+  margin-left: 2.5rem;
+
+  @media screen and (max-width: 552px){
+    margin-left: 0;
+  }
+}
