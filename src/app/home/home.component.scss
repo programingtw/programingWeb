@@ -1,9 +1,46 @@
-*{
-  font-weight: 600;
-}
-
 .pain-point{
   background-color: #ffea29;
+  
+  h3{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .problem{
+    margin: 10px 20px;
+    padding: 5px;
+
+    h4{
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    h4::after{
+      position: absolute;
+      content: 'Q';
+      top: -50%;
+      left: -2%;
+      font-size: 64px;
+      color: rgba(5, 5, 5, 0.164);
+      z-index: 0;
+    }
+
+    p{
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 552px) {
+      h4::after{
+        top: -20%;
+        left: -10%;
+      }
+    }
+  }
 }
 
 .contact-us{
