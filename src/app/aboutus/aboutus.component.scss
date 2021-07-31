@@ -51,6 +51,10 @@
 .testimonial-card{
   position: relative;
   transition: .5s;
+
+  @media screen and (max-width: 992px){
+    margin: 10px 0;
+  }
 }
 
 .testimonial-card:hover{
