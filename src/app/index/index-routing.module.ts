@@ -8,12 +8,7 @@ const routes: Routes = [
   {
     path: '', component: IndexComponent,
     children: [
-      {
-        path: '', 
-        children: [
-          {path: '', component: HomeComponent},
-        ]
-      },
+      {path: '', component: HomeComponent},
       {path: 'about', component: AboutusComponent},
       {path: 'home', redirectTo: '/', pathMatch: 'full'},
     ]
