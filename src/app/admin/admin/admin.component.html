@@ -1,7 +1,20 @@
-<p>admin works!</p>
-<nav>
-  <a routerLink="./" routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
-  <a routerLink="./announcement" routerLinkActive="active">文章</a>
-</nav>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="./">Admin</a></mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="./announcement" routerLinkActive="active">文章</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="./login" routerLinkActive="active">login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" >logout</a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>
 <router-outlet></router-outlet>
