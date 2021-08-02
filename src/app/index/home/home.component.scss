@@ -1,0 +1,116 @@
+.pain-point{
+  background-color: #ffea29;
+  margin-top: -60px !important;
+  z-index: 69;
+  padding: 0 40px;
+  
+  h3{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .problem{
+    margin: 10px 20px;
+    padding: 5px;
+
+    h4{
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    h4::after{
+      position: absolute;
+      content: 'Q';
+      top: -50%;
+      left: -2%;
+      font-size: 64px;
+      color: rgba(5, 5, 5, 0.164);
+      z-index: 0;
+    }
+
+    p{
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 552px) {
+      h4::after{
+        top: -20%;
+        left: -10%;
+      }
+    }
+  }
+}
+
+.contact-us{
+  width: 100%;
+  background-color: #009DC0;
+
+  p, .btn{
+    color: white;
+  }
+
+  ::ng-deep .mat-form-field-wrapper{
+    width: 300px;
+    font-size: 1.2em;
+    
+    label{
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .btn{
+    width: 300px;
+    font-size: 1.2em;
+    background-color: #0061b1;
+  }
+
+  @media screen and (max-width: 552px) {
+    ::ng-deep .mat-form-field-wrapper{
+      width: 240px;
+    }
+  
+    .btn{
+      width: 240px;
+    }
+  }
+}
+
+.social{
+  text-align: center;
+
+  .d-flex{
+    width: 30%;
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
+  }
+  
+
+  a{
+    margin: 10px auto;
+    align-content: space-between;
+  }
+  
+  .fab{
+    font-weight: 300;
+  }
+}
+
+.fa-facebook{
+  color: #3B5998;
+}
+
+.fa-instagram{
+  color: #405de6;
+}
+
+.fa-line{
+  color: #00c300;
+}
