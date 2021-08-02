@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from './fireconfig'
