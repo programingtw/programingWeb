@@ -7,7 +7,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
   declarations: [],
   imports: [],
   exports: [ 
-    FirebaseAuthModule,
+    FirebaseModule,
     AngularFireAuthModule
   ]
 })
