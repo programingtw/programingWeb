@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>{{id}}</h1>
+  <form action="">
+    <h2 *ngIf="doc | async as d">{{d.title}}</h2>
+    <h2 *ngIf="doc | async as d">{{d.content}}</h2>
+  </form>
+</div>
