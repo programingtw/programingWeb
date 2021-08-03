@@ -1,19 +1,26 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
   <mdb-navbar-brand><a class="navbar-brand" routerLink="./">Admin</a></mdb-navbar-brand>
   <links>
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav" style="width: 100%;">
       <li class="nav-item">
         <a class="nav-link waves-light" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-light" routerLink="./announcement" routerLinkActive="active">文章</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="./login" routerLinkActive="active">login</a>
+      <li class="nav-item mr-auto">
+        <a class="nav-link waves-light" href="/">回首頁</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" >logout</a>
-      </li>
+      <div class="ml-auto">
+        <div class="d-flex" *ngIf="auth.user | async as user; else showLogin">
+          <li class="nav-item">
+            <a class="nav-link waves-light" (click)="logout()">logout</a>
+          </li>
+        </div>
+        <ng-template #showLogin>
+          <a class="nav-link waves-light" routerLink="./login" routerLinkActive="active">login</a>
+        </ng-template>
+      </div>
     </ul>
   </links>
 </mdb-navbar>
