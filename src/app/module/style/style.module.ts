@@ -8,10 +8,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // angular material
+import { MatNativeDateModule } from '@angular/material/core'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [],
@@ -21,7 +24,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
   exports: [
     MDBBootstrapModule, 
     FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, 
-    MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule
-  ]
+    MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule,
+    MatDatepickerModule, MatNativeDateModule, MatCheckboxModule
+  ],
+  providers: [MatDatepickerModule]
 })
 export class StyleModule { }
