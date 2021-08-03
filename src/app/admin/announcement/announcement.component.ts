@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-announcement',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./announcement.component.scss']
 })
 export class AnnouncementComponent implements OnInit {
+  headElements = ['ID', '標題', '修改時間', '發布時間', '修改'];
+  elements: Observable<any[]>
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private afs: AngularFirestore) { 
+    this.elements = afs.collection('announcement').valueChanges({ idField: 'docId'})
+    console.log(this.elements)
   }
 
+  ngOnInit(): void {
+      
+  }
 }
