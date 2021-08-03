@@ -4,6 +4,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { StyleModule } from '../module/style/style.module'; 
 import { FirebaseAuthModule } from '../module/firebase/firebaseAuth.module';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import { AdminComponent } from './admin/admin.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +22,7 @@ import { AnnouncementdetailComponent } from './announcement/announcementdetail/a
     AnnouncementdetailComponent
   ],
   imports: [
+    CKEditorModule,
     CommonModule,
     AdminRoutingModule,
     StyleModule,
