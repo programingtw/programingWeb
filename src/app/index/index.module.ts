@@ -12,6 +12,7 @@ import { CarouselComponent } from './components/carousel/carousel.component'
 import { IndexComponent } from './index/index.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HomeComponent } from './home/home.component';
+import { AnnouncementComponent } from './announcement/announcement.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     AboutusComponent,
     HomeComponent,
     NavbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    AnnouncementComponent
   ],
   imports: [
     CommonModule,
