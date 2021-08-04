@@ -1,1 +1,10 @@
-<p>announcement works!</p>
+<div class="container">
+  <ul>
+    <li *ngFor="let item of docList | async">
+      <a routerLink="{{item.docId}}">
+        <h3>{{item.title}}</h3>
+        <p>{{item.publishTime.toDate() | date: 'yyyy-MM-dd'}}</p>
+      </a>
+    </li>
+  </ul>
+</div>
