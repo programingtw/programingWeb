@@ -13,7 +13,6 @@ export class AnnouncementComponent implements OnInit {
 
   constructor(private afs: AngularFirestore) { 
     this.elements = afs.collection('announcement').valueChanges({ idField: 'docId'})
-    console.log(this.elements)
   }
 
   ngOnInit(): void {
