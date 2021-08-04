@@ -149,7 +149,7 @@ class UploadAdapter {
           task.snapshotChanges().pipe(
             finalize(() => {
               this.downloadURL = fileref.getDownloadURL()
-              this.downloadURL.subscribe(res => resolve({res}))
+              this.downloadURL.subscribe(res => resolve({default: res}))
             })
           ).subscribe()
         }
