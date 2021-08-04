@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
 
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage'
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,11 @@ import { AnnouncementdetailComponent } from './announcement/announcementdetail/a
     CommonModule,
     AdminRoutingModule,
     StyleModule,
-    FirebaseAuthModule
-  ]
+    FirebaseAuthModule,
+    AngularFireStorageModule
+  ],
+  // providers: [
+  //   {provide: BUCKET, useValue: 'announcement'}
+  // ]
 })
 export class AdminModule { }
