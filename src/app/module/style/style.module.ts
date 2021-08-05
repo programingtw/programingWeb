@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MDBBootstrapModule, 
     FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, 
     MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule,
-    MatDatepickerModule, MatNativeDateModule, MatCheckboxModule
+    MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatDialogModule
   ],
   providers: [MatDatepickerModule]
 })

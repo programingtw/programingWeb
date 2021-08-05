@@ -119,9 +119,11 @@ export class AnnouncementdetailComponent implements OnInit {
       title: f.title,
       updateTime: new Date()
     }
-    console.log(data, f.vis)
     this.afs.collection('announcement').doc(this.id).update(data).then(()=>{
       alert('success')
+      if(status === 1){
+        this.router.navigate(['admin/announcement'])
+      }
     }).catch(()=>{
       alert('壞掉了')
     })

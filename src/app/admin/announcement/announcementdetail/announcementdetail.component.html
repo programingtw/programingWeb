@@ -25,7 +25,7 @@
       <div class="d-block">        
         <mat-checkbox formControlName="vis">公開</mat-checkbox>
       </div>
-      <mat-form-field appearance="fill">
+      <mat-form-field class="intro" appearance="fill">
         <mat-label>簡介</mat-label>
         <input formControlName="intro" matInput required>
       </mat-form-field>
@@ -36,8 +36,8 @@
       </div>
       <ckeditor [editor]="editor" data="{{d.content}}" formControlName="content" [config]="config" (ready)="onReady($event)"></ckeditor>
       <button type="button" mdbBtn color="primary" (click)="submit(0)" mdbWavesEffect>儲存</button>
-      <button type="button" mdbBtn color="primary"  mdbWavesEffect>發布並返回</button>
-      <button type="button" mdbBtn color="primary"  mdbWavesEffect>取消</button>
+      <button type="button" mdbBtn color="primary" (click)="submit(1)" mdbWavesEffect>發布並返回</button>
+      <button type="button" mdbBtn color="primary" routerLink=".." mdbWavesEffect>取消</button>
     </div>
   </form>
 </div>
