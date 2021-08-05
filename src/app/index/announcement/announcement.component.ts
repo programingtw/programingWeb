@@ -12,7 +12,7 @@ export class AnnouncementComponent implements OnInit {
 
   constructor(afs:AngularFirestore) {
     this.docList = afs.collection('announcement', 
-      ref => ref.orderBy('publishTime')).valueChanges({ idField: 'docId' })
+      ref => ref.orderBy('publishTime', 'desc')).valueChanges({ idField: 'docId' })
   }
 
   ngOnInit(): void {

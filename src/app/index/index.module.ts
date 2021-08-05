@@ -13,6 +13,7 @@ import { IndexComponent } from './index/index.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { HomeComponent } from './home/home.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
+import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AnnouncementComponent } from './announcement/announcement.component';
     HomeComponent,
     NavbarComponent,
     CarouselComponent,
-    AnnouncementComponent
+    AnnouncementComponent,
+    AnnouncementdetailComponent
   ],
   imports: [
     CommonModule,
