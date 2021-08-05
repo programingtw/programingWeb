@@ -1,0 +1,39 @@
+.container {
+
+  img{
+    margin: -14px 0 0 -15px;
+  }
+
+  li{
+    margin: 30px 10px;
+    list-style-type: none;
+
+    .card-body{
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .title{
+    color: #000;
+    
+    h3{
+      font-size: 40px;
+    }
+
+    h4{
+      font-size: 28px;
+    }
+  }
+
+  .date {
+    margin-top: -10px;
+    font-weight: 500;
+    color: rgb(22, 22, 22);
+  }
+
+  .intro {
+    color: #000;
+    font-size: 22px;
+    line-height: 30px;
+  }
+}

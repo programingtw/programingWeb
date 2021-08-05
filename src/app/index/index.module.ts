@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IndexRoutingModule } from './index-routing.module';
 import { StyleModule } from '../module/style/style.module'
-import { FirebaseModule } from '../module/firebase/firebase.module' 
+import { FirebaseAuthModule } from '../module/firebase/firebaseAuth.module' 
 
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
 
+import { SafehtmlPipe } from '../pipe/safehtml.pipe';
+
 @NgModule({
   declarations: [
     IndexComponent,
@@ -24,13 +26,14 @@ import { AnnouncementdetailComponent } from './announcement/announcementdetail/a
     NavbarComponent,
     CarouselComponent,
     AnnouncementComponent,
-    AnnouncementdetailComponent
+    AnnouncementdetailComponent,
+    SafehtmlPipe,
   ],
   imports: [
     CommonModule,
     IndexRoutingModule,
     StyleModule,
-    FirebaseModule
+    FirebaseAuthModule
   ]
 })
 export class IndexModule { }

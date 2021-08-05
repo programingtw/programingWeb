@@ -1,16 +1,15 @@
-import { Component, OnInit, PipeTransform, Pipe } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore'
+// import { Observable } from 'rxjs';
 
-@Pipe({ name: "safeHtml" })
-export class SafeHtmlPipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) {}
-
-  transform(value) {
-    return this.sanitizer.bypassSecurityTrustHtml(value);
-  }
+export interface Doc{
+  content: string,
+  coverPicture: string,
+  intro: string,
+  publishTime: Date,
+  title: string,
+  vis: boolean
 }
 
 @Component({
@@ -20,18 +19,24 @@ export class SafeHtmlPipe implements PipeTransform {
 })
 export class AnnouncementdetailComponent implements OnInit {
   id
-  doc: Observable<any>
+  doc
 
   constructor(
+    private router: Router,
     private acrout: ActivatedRoute,
     private afs: AngularFirestore
   ) { 
     this.id = this.acrout.snapshot.paramMap.get('id')
-    this.doc = this.afs.collection('announcement').doc(this.id).valueChanges()
+    this.afs.collection('announcement', 
+        ref => ref.where('vis', '==', true)
+      ).doc(this.id).valueChanges()
+      .subscribe( val => {
+        this.doc = val
+      }, e => {
+        this.router.navigate([''])
+      })
   }
 
   ngOnInit(): void {
   }
-
 }
-

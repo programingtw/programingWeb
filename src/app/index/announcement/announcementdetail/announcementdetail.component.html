@@ -1,7 +1,12 @@
-<div class="container">
-  <div class="doc" *ngIf="doc | async as d">
-    <h1>{{d.title}}</h1>
-    <p>{{d.publishTime.toDate() | date: "yyyy-MM-dd"}}</p>
-    <div class="content" [innerHtml]="d.content | safeHtml"></div>
+<div class="doc" *ngIf="doc">
+  <div class="container">
+    <div class="title">
+      <h1>{{doc.title}}</h1>
+      <p>{{doc.publishTime.toDate() | date: "yyyy-MM-dd"}}</p>
+    </div>
+    <div class="view">
+      <img [src]="doc.coverPicture" alt="" class="img-fluid">
+    </div>
+    <div class="content" [innerHtml]="doc.content | safehtml"></div>
   </div>
 </div>

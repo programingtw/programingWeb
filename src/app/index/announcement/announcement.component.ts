@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-announcement',
@@ -8,15 +7,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./announcement.component.scss']
 })
 export class AnnouncementComponent implements OnInit {
-  docList: Observable<any[]>
+  docList!: any[]
 
   constructor(afs:AngularFirestore) {
-    this.docList = afs.collection('announcement', 
-      ref => ref.orderBy('publishTime', 'desc')).valueChanges({ idField: 'docId' })
+    afs.collection('announcement', 
+      ref => ref.where('vis', '==', true).orderBy('publishTime', 'desc').limit(10)
+      ).valueChanges({ idField: 'docId' })
+      .subscribe( (val:any) => {
+        this.docList = val
+      }, e => {
+        console.log(e)
+      })
   }
 
   ngOnInit(): void {
-    
   }
 
 }

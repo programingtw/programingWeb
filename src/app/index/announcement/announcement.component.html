@@ -1,9 +1,28 @@
 <div class="container">
   <ul>
-    <li *ngFor="let item of docList | async">
+    <li *ngFor="let item of docList">
       <a routerLink="{{item.docId}}">
-        <h3>{{item.title}}</h3>
-        <p>{{item.publishTime.toDate() | date: 'yyyy-MM-dd'}}</p>
+      <mdb-card>
+        <mdb-card-body>
+          <div class="row">
+            <div class="col-sm-6">
+              <img [src]="item.coverPicture" class="img-fluid z-depth-1" alt="">
+            </div>
+            <div class="col-sm-6">
+              <div class="title">
+                <h4>普羅程式柯普文章</h4>
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="date">
+                <p>{{item.publishTime.toDate() | date: 'yyyy-MM-dd'}}</p>
+              </div>
+              <div class="intro">
+                <p>{{item.intro}}</p>
+              </div>
+            </div>
+          </div>
+          </mdb-card-body>
+        </mdb-card>
       </a>
     </li>
   </ul>
