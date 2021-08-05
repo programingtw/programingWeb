@@ -26,6 +26,10 @@
   .carousel-caption.right{
     left: 60%;
   }
+
+  .mask{
+    background-color: rgba(0, 0, 0, 0.39);
+  }
 }
 
 @media screen and (max-width: 576px) {
