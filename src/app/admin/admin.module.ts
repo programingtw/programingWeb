@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
 
-import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage'
+import { AngularFireStorageModule } from '@angular/fire/storage'
 
 
 @NgModule({
@@ -31,8 +31,5 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage'
     FirebaseAuthModule,
     AngularFireStorageModule
   ],
-  // providers: [
-  //   {provide: BUCKET, useValue: 'announcement'}
-  // ]
 })
 export class AdminModule { }
