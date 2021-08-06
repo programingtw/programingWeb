@@ -45,6 +45,7 @@ export class AnnouncementdetailComponent implements OnInit {
           {name: 'og:url', content: `https://new.programing.tw/announcement/${this.id}`},
           {name: 'og:img', content: this.doc.coverPicture},
           {name: 'og:site_name', content: `普羅程式教育`},
+          {name: 'article:author', content: `https://www.facebook.com/programing.tw`},
         ])
       }, e => {
         this.router.navigate([''])
