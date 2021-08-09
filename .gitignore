@@ -46,3 +46,6 @@ Thumbs.db
 
 # firebase
 fireconfig.ts
+public
+functions/node_modules
+functions/dist4

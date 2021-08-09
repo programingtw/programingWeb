@@ -34,7 +34,7 @@
         <input type="file" required class="form-control" id="file" (change)="imageupload($event)">
         <div *ngIf="coverPicture">有圖片了</div>
       </div>
-      <ckeditor [editor]="editor" data="{{d.content}}" formControlName="content" [config]="config" (ready)="onReady($event)"></ckeditor>
+      <!-- <ckeditor *ngIf="isBrowser" [editor]="editor" data="{{d.content}}" formControlName="content" [config]="config" (ready)="onReady($event)"></ckeditor> -->
       <button type="button" mdbBtn color="primary" (click)="submit(0)" mdbWavesEffect>儲存</button>
       <button type="button" mdbBtn color="primary" (click)="submit(1)" mdbWavesEffect>發布並返回</button>
       <button type="button" mdbBtn color="primary" routerLink=".." mdbWavesEffect>取消</button>

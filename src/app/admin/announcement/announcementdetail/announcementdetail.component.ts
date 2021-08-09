@@ -1,11 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common'
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder,Validators } from '@angular/forms'
+import { FormBuilder, Validators } from '@angular/forms'
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import * as ClassicEditor from '../../../../ckeditor/ckeditor';
+import { ClassicEditor } from 'src/ckeditor/ckeditor';
+// import * as ClassicEditor from '../../../../ckeditor/ckeditor';
 
 @Component({
   selector: 'app-announcementdetail',
@@ -13,7 +15,7 @@ import * as ClassicEditor from '../../../../ckeditor/ckeditor';
   styleUrls: ['./announcementdetail.component.scss']
 })
 export class AnnouncementdetailComponent implements OnInit {
-  public editor = ClassicEditor
+  public editor
   public config = {
     placeholder: "內容",
     toolbar: {
@@ -46,7 +48,7 @@ export class AnnouncementdetailComponent implements OnInit {
     licenseKey: '', 
   };
   public id: any
-  public doc: Observable<any>
+  public doc!: Observable<any>
   public coverPicture: string = ''
   public form = this.fb.group({
     title: ['', Validators.required],
@@ -56,36 +58,46 @@ export class AnnouncementdetailComponent implements OnInit {
     intro: ['', Validators.required],
     content: ['', Validators.required]
   })
+  public isBrowser = false
 
   constructor(
     private router: Router,
     private acrout: ActivatedRoute,
     private afs: AngularFirestore,
     private storage: AngularFireStorage,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
-    this.id = this.acrout.snapshot.paramMap.get('id')
-    this.doc = this.afs.collection('announcement').doc(this.id).valueChanges()
-    this.doc.subscribe(res=>{
-      this.form.patchValue(res)
-      this.coverPicture = res.coverPicture
-      let t = new Date(res.publishTime.seconds * 1000)
-      this.form.patchValue({
-        publishDate: t,
-        publishTimePicker: String(t.getHours()) + ':' + 
-                           String(t.getMinutes()).padStart(2, '0')
+    this.isBrowser = isPlatformBrowser(this.platformId)
+    if(this.isBrowser){
+      // const ClassicEditor = require('../../../../ckeditor/ckeditor')
+      // this.editor = ClassicEditor
+      // this.editor.defaultConfig = this.config
+      this.id = this.acrout.snapshot.paramMap.get('id')
+      this.doc = this.afs.collection('announcement').doc(this.id).valueChanges()
+      this.doc.subscribe(res=>{
+        this.form.patchValue(res)
+        this.coverPicture = res.coverPicture
+        let t = new Date(res.publishTime.seconds * 1000)
+        this.form.patchValue({
+          publishDate: t,
+          publishTimePicker: String(t.getHours()) + ':' + 
+          String(t.getMinutes()).padStart(2, '0')
+        })
       })
-    })
+    }
   }
-
-  ngOnInit(): void {
+    
+    ngOnInit(): void {
     // this.acrout.queryParams.subscribe((parm) => {this.id = parm['id']})
   }
 
   public onReady(editor) {
-    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-      return new UploadAdapter(loader, this.storage, this.id);
-    };
+    if(isPlatformBrowser(this.platformId)){
+      editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        return new UploadAdapter(loader, this.storage, this.id);
+      };
+    }
   }
 
   public imageupload(event){
