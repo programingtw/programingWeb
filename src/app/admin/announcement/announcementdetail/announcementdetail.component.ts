@@ -70,9 +70,9 @@ export class AnnouncementdetailComponent implements OnInit {
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId)
     if(this.isBrowser){
-      // const ClassicEditor = require('../../../../ckeditor/ckeditor')
-      // this.editor = ClassicEditor
-      // this.editor.defaultConfig = this.config
+      const ClassicEditor = require('../../../../ckeditor/ckeditor')
+      this.editor = ClassicEditor
+      this.editor.defaultConfig = this.config
       this.id = this.acrout.snapshot.paramMap.get('id')
       this.doc = this.afs.collection('announcement').doc(this.id).valueChanges()
       this.doc.subscribe(res=>{
