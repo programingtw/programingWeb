@@ -1,7 +1,33 @@
+.bg-img{
+  width: auto;
+  height: 380px;
+  background-image: url('../../../assets/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top 75px right 0px;
+  background-attachment: fixed;
+
+  @media screen and (max-width: 552px) {
+    height: 80px;
+    background-image: url('../../../assets/banner_phone.jpg');
+  }
+}
+
 .container {
+  font-size: 28px;
+
+  @media screen and (max-width: 552px) {
+    ul{
+      padding: 0;
+    }
+  }
 
   img{
     margin: -14px 0 0 -15px;
+
+    @media screen and (max-width: 552px) {
+      margin: 0;
+    }
   }
 
   li{
@@ -17,15 +43,24 @@
     color: #000;
     
     h3{
-      font-size: 40px;
+      font-size: 1.4em;
+
+      @media screen and (max-width: 552px) {
+        font-size: 1.2em;
+      }
     }
 
     h4{
-      font-size: 28px;
+      font-size: 0.6em;
+
+      @media screen and (max-width: 552px) {
+        margin-top: 10px;
+      }
     }
   }
 
   .date {
+    font-size: 0.5em;
     margin-top: -10px;
     font-weight: 500;
     color: rgb(22, 22, 22);
@@ -33,7 +68,7 @@
 
   .intro {
     color: #000;
-    font-size: 22px;
+    font-size: 0.78em;
     line-height: 30px;
   }
 }
