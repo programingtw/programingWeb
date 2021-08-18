@@ -1,0 +1,28 @@
+.container{
+  margin: 20px auto;
+
+  ::ng-deep .card-title h3{
+    height: 42px;
+    position: relative;
+    font-size: 42px;
+    font-weight: 900;
+    margin-top: 30px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -5px;
+      width: 3px;
+      height: 100%;
+      background-color: #009DC0;
+    }
+  }
+
+  ::ng-deep .card-text{
+    padding: 0px 30px;
+    font-size: 20px !important;
+    line-height: 32px;
+    color: #000 !important;
+  }
+}
