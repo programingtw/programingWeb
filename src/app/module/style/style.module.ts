@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 
 // MDBoostrap
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+// import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// MDB-ui-kit
+import { MdbUiKitModule } from './mdb-ui-kit.module'
 
 // angular material
 import { MatNativeDateModule } from '@angular/material/core'
@@ -20,10 +22,11 @@ import { MatDialogModule } from '@angular/material/dialog'
 @NgModule({
   declarations: [],
   imports: [
-    MDBBootstrapModule.forRoot()
+    // MDBBootstrapModule.forRoot()
   ],
   exports: [
-    MDBBootstrapModule, 
+    // MDBBootstrapModule,
+    MdbUiKitModule,
     FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, 
     MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule,
     MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatDialogModule
