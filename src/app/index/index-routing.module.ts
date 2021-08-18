@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
+import { CourseComponent } from './course/course.component'
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
       {path: 'about', component: AboutusComponent},
       {path: 'home', redirectTo: '/', pathMatch: 'full'},
       {path: 'announcement', component: AnnouncementComponent},
-      {path: 'announcement/:id', component: AnnouncementdetailComponent}
+      {path: 'announcement/:id', component: AnnouncementdetailComponent},
+      {path: 'course', component: CourseComponent}
     ]
   },
 ];

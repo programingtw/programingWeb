@@ -16,6 +16,7 @@ import { AnnouncementComponent } from './announcement/announcement.component';
 import { AnnouncementdetailComponent } from './announcement/announcementdetail/announcementdetail.component';
 
 import { SafehtmlPipe } from '../pipe/safehtml.pipe';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SafehtmlPipe } from '../pipe/safehtml.pipe';
     AnnouncementComponent,
     AnnouncementdetailComponent,
     SafehtmlPipe,
+    CourseComponent,
   ],
   imports: [
     CommonModule,
