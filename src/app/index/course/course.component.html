@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <img src="" alt="">
+      <div class="card">
+        <mdb-form-control>
+          <input
+            mdbInput
+            [mdbDatepicker]="datepicker"
+            type="text"
+            class="form-control"
+            id="exampleDatepicker"
+          />
+          <label mdbLabel for="exampleDatepicker" class="form-label">Select a date</label>
+          <mdb-datepicker-toggle [mdbDatepicker]="datepicker"></mdb-datepicker-toggle>
+          <mdb-datepicker #datepicker></mdb-datepicker>
+        </mdb-form-control>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        d
+      </div>
+    </div>
+  </div>
+</div>
