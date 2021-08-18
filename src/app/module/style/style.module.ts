@@ -6,8 +6,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// MDBoostrap
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
+
 // MDB-ui-kit
 import { MdbUiKitModule } from './mdb-ui-kit.module'
+
 
 // angular material
 import { MatNativeDateModule } from '@angular/material/core'
@@ -23,14 +28,16 @@ import { MatDialogModule } from '@angular/material/dialog'
   declarations: [],
   imports: [
     // MDBBootstrapModule.forRoot()
+    MDBBootstrapModulesPro.forRoot()
   ],
   exports: [
     // MDBBootstrapModule,
-    MdbUiKitModule,
+    MDBBootstrapModulesPro,
+    // MdbUiKitModule,
     FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, 
     MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule,
     MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatDialogModule
   ],
-  providers: [MatDatepickerModule]
+  providers: [MatDatepickerModule, MDBSpinningPreloader]
 })
 export class StyleModule { }
