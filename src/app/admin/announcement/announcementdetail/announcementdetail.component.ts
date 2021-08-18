@@ -6,7 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { ClassicEditor } from 'src/ckeditor/ckeditor';
+// import { ClassicEditor } from 'src/ckeditor/ckeditor';
 // import * as ClassicEditor from '../../../../ckeditor/ckeditor';
 
 @Component({
