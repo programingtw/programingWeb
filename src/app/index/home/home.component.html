@@ -23,22 +23,34 @@
     <p class="h3 mb-2">聯絡我們</p>
     <p class="mb-3">想要知道更多資訊? 請聯絡我們</p>
     <div class="form-item">
-      <mat-form-field appearance="fill">
+      <!-- <mat-form-field appearance="fill">
         <mat-label>姓名</mat-label>
         <input matInput formControlName="name" id="name" required>
-      </mat-form-field>
+      </mat-form-field> -->
+      <div class="md-form">
+        <input type="text" id="name" formControlName="name" class="form-control" mdbInput [mdbValidate]="true"  required>
+        <label for="name">姓名</label>
+      </div>
     </div>
     <div class="form-item">
-      <mat-form-field appearance="fill">
+      <!-- <mat-form-field appearance="fill">
         <mat-label>電話</mat-label>
         <input matInput formControlName="phone" id="phone" required>
-      </mat-form-field>
+      </mat-form-field> -->
+      <div class="md-form">
+        <input type="text" id="phone" formControlName="phone" class="form-control" mdbInput [mdbValidate]="true" required>
+        <label for="phone">電話</label>
+      </div>
     </div>
     <div class="form-item">
-      <mat-form-field appearance="fill">
+      <!-- <mat-form-field appearance="fill">
         <mat-label>電子郵件</mat-label>
         <input matInput formControlName="email" id="email" required>
-      </mat-form-field>
+      </mat-form-field> -->
+      <div class="md-form">
+        <input type="email" id="email" formControlName="email" class="form-control" mdbInput [mdbValidate]="true" >
+        <label for="email">電子郵件</label>
+      </div>
     </div>
     <button mdbBtn mdbWavesEffect type="submit" class="contact-us-btn z-depth-0 my-4 waves-effect"
      [disabled]="disabledSubmitButton">送出</button>

@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       'email': ['', Validators.compose([Validators.required, Validators.email])],
     });
   }
-
+  get input() { console.log(this.contactForm.get('email'));return this.contactForm.get('email'); }
   ngOnInit(): void {
   }
 
