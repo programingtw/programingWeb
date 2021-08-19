@@ -27,6 +27,19 @@
     left: 60%;
   }
 
+  .carousel-caption.center{
+    left: 15%;
+    top: 70%;
+    
+    .btn{
+      background-color: #009DC0;
+      color: #fff;
+      font-weight: 800;
+      font-size: 24px;
+      width: 150px;
+    }
+  }
+
   .mask{
     background-color: rgba(0, 0, 0, 0.39);
   }
