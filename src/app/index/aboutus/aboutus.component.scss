@@ -42,11 +42,17 @@
 
 
 // member
-// .avatar img{
-//   width: 184px;
-//   margin-top: -92px;
-//   border: 5px solid #fff;
-// }
+
+.avatar{
+  width: 184px !important;
+  margin-top: -92px !important;
+}
+
+.avatar img{
+  width: 184px;
+  height: 184px;
+  // border: 5px solid #fff;
+}
 
 .testimonial-card{
   position: relative;
@@ -62,7 +68,7 @@
 }
 
 .card-up{
-  height: 120px;
+  height: 184px;
   overflow: hidden;
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
