@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import  {MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MDBModalRef, MDBModalService } from 'ng-uikit-pro-standard';
 import { Router } from '@angular/router'
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,12 @@ import { Observable } from 'rxjs';
 export class AnnouncementComponent implements OnInit {
   headElements = ['ID', '標題', '修改時間', '發布時間', '公開', '修改', '移除'];
   elements: Observable<any[]>
+  delId
 
-  constructor(private afs: AngularFirestore, private router: Router) { 
+  constructor(
+    private afs: AngularFirestore, 
+    private router: Router,
+    private modalService: MDBModalService) { 
     this.elements = afs.collection('announcement', 
       res => res.orderBy('updateTime', 'desc')).valueChanges({ idField: 'docId'})
   }
@@ -34,6 +38,10 @@ export class AnnouncementComponent implements OnInit {
     }
     this.afs.collection('announcement').doc(id).set(data)
     this.router.navigate([`/admin/announcement/${id}`])
+  }
+
+  public showmodel(doc){
+    this.delId = doc
   }
 
   public delDoc(id){
