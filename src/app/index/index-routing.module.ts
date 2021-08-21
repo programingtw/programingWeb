@@ -17,9 +17,9 @@ const routes: Routes = [
       {path: 'announcement', component: AnnouncementComponent},
       {path: 'announcement/:id', component: AnnouncementdetailComponent},
       {path: 'course', component: CourseComponent},
-      {path: '*', redirectTo: '/', pathMatch: 'full'}
     ]
   },
+  {path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
 @NgModule({
