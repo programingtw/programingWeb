@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /assets/
+Sitemap: https://www.programing.tw/sitemap.xml
