@@ -68,6 +68,16 @@
         font-weight: 600;
       }
     }
+
+    input.form-control.validate-error.ng-invalid.ng-touched, input.form-control.validate-error.ng-invalid.ng-dirty, .form-submitted input.form-control.validate-error.ng-invalid {
+      border-bottom: 1px solid #ff655a !important;
+      box-shadow: 0 1px 0 0 #ff655a !important;
+       
+      & + label{
+        color: #ff655a !important;
+        font-weight: 600;
+      }
+    }
   }
 
   .btn{
