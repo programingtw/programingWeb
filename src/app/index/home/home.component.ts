@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
       'name': ['', Validators.required],
       'phone': ['', Validators.required],
       'email': ['', Validators.compose([Validators.required, Validators.email])],
+      'message': ['', Validators.required],
     });
   }
   get input() { console.log(this.contactForm.get('email'));return this.contactForm.get('email'); }
