@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  replys
 
-  constructor() { }
+  constructor(private afs:AngularFirestore) { 
+    this.replys = afs.collection('reply', ref => ref.orderBy('time', 'desc')).valueChanges();
+  }
 
   ngOnInit(): void {
   }
