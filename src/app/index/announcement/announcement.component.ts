@@ -11,7 +11,7 @@ export class AnnouncementComponent implements OnInit {
 
   constructor(afs:AngularFirestore) {
     afs.collection('announcement', 
-      ref => ref.where('vis', '==', true).orderBy('publishTime', 'desc').limit(10)
+      ref => ref.where('vis', '==', true).orderBy('publishTime', 'desc')
       ).valueChanges({ idField: 'docId' })
       .subscribe( (val:any) => {
         this.docList = val
